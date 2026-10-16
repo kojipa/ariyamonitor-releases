@@ -9,6 +9,9 @@
 
 👉 **[最新版のページ（Releases）](../../releases/latest)** を開き、`ariyamonitor-public-x.y.z.apk` をダウンロードしてください。
 
+> 📱 Android 5〜7の端末や、動作が重いと感じる端末向けに **[Lite版（軽量版）](https://github.com/kojipa/ariyamonitor-lite-releases)** もあります。
+
+
 ## できること
 
 - **ホーム**：SOC（充電率）を大きく表示します。電気の流れ（走行中・回生・充電中）も表示します。
