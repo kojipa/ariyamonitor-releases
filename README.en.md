@@ -30,6 +30,7 @@ If the app is showing Japanese: tap **設定** (Settings), then the **表示** (
 - **Charging (charge history)**: Records each charging session on the device and lists time, SOC change, energy charged (approximate), power and temperature. Tap one to see its charge curve (power, real SOC, battery temperature). Charging with the car switched off is recorded too, as long as the app is running.
 - **Auto-connect**: The app connects to the OBD2 adapter automatically when it starts. With Bluetooth (classic) adapters it tries three ways of connecting and remembers the one that works. Wi-Fi adapters (v0.3.9 or later) and BLE adapters (v0.4.0 or later) are supported too. If it can't connect, it shows why (Bluetooth is off, the adapter's Wi-Fi isn't found, the adapter can't be reached, the car doesn't respond, and so on).
 - **English screens**: Switch the screens to English with **Language** in Settings → Display (v0.4.0 or later).
+- **Drive and charging records (CSV)**: Turn on **Record drives and charging** in Settings → Records, and each time the connection ends, the values read are saved automatically as a CSV file in the folder you choose. There are three formats to choose from. Beyond 100 MB in total, the oldest are deleted (v0.4.3 and later).
 - **Keep screen on**: Stops the screen from turning off while the app is shown (Off / While reading / Always; the default is While reading).
 
 Some items (current, SOH, high-precision current, charge power), the battery screen's diagnosis and capacity estimate, and the trip summary in the log are **approximate (unofficial)**. Their accuracy hasn't been fully verified even on the author's car, so treat them as a rough guide.
@@ -38,7 +39,7 @@ Some items (current, SOH, high-precision current, charge power), the battery scr
 
 - **The app sends only read commands to the car.** It has no function to write, reset ECUs or clear trouble codes. It reads from the battery-related ECUs, the meter (tire pressure, odometer) and the climate control (outside temp). Tire pressure and similar values are read only once a minute while driving.
 - If the car is parked, not charging, and almost no current flows for 10 minutes, reading stops automatically (to protect the 12V battery).
-- Vehicle data is never sent anywhere. There is no account or sign-up.
+- Vehicle data is never sent anywhere. There is no account or sign-up. Record CSVs are only saved to the folder you choose on the device.
 - The only network access is a check, once a day, for a newer version on this page. You can turn it off in Settings.
 - Location is not used, with one exception: **on Android 11 or older, when you choose a BLE adapter**, the system may require location permission to search for it. It is used only to find the adapter; your location is never recorded or sent. It is not requested on Android 12 or later, or for Bluetooth (classic) and Wi-Fi adapters.
 
