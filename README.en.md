@@ -34,6 +34,7 @@ If the app is showing Japanese: tap **設定** (Settings), then the **表示** (
 - **Turn signals (v0.4.4 and later)**: Turn on **Show turn signals on Home** in Settings → Display, and the car picture and the screen edge light up in yellow so you notice a signal left on (off by default). The display lags a little and other values update a little more slowly. Always check the car's own turn signal and meter when turning.
 - **Threshold notifications (v0.4.4 and later)**: In Settings → Notifications, get a notification and a sound when charging power drops, or battery temperature, SOC, tire pressure or the 12V battery crosses a level you set (sounds: none / beep / chime 1 / chime 2). It works only while the app is reading from the car.
 - **Units (v0.4.4 and later)**: Choose km/mi, °C/°F and kPa/psi/bar under **Units** in Settings → Display. CSV export uses the chosen units too.
+- **Playing song (v0.4.5 and later)**: Turn on **Show the playing song on Home** in Settings → Display to show the title, artist and cover art at the top right of Home (off by default). It needs Android's "Notification access". If Android says the app was denied access, open Android Settings → Apps → Ariya Monitor → ⋮ at the top right → "Allow restricted settings", then turn it on again.
 - **Keep screen on**: Stops the screen from turning off while the app is shown (Off / While reading / Always; the default is While reading).
 
 Some items (current, SOH, high-precision current, charge power), the battery screen's diagnosis and capacity estimate, and the trip summary in the log are **approximate (unofficial)**. Their accuracy hasn't been fully verified even on the author's car, so treat them as a rough guide.
@@ -43,7 +44,8 @@ Some items (current, SOH, high-precision current, charge power), the battery scr
 - **The app sends only read commands to the car.** It has no function to write, reset ECUs or clear trouble codes. It reads from the battery-related ECUs, the meter (tire pressure, odometer), the climate control (outside temp), and, only when turn signals are turned on, the body electrics (turn signal state). Tire pressure and similar values are read only once a minute while driving.
 - If the car is parked, not charging, and almost no current flows for 10 minutes, reading stops automatically (to protect the 12V battery).
 - Vehicle data is never sent anywhere. There is no account or sign-up. Record CSVs are only saved to the folder you choose on the device.
-- The only network access is a check, once a day, for a newer version on this page. You can turn it off in Settings.
+- The only network access is a check, about every 6 hours, for a newer version on this page (you can also check now). You can turn it off in Settings.
+- Only when "Playing song" is on, the app uses Android's notification access. It reads only the playing song's information, not the contents of other notifications, and never sends it anywhere.
 - Location is not used, with one exception: **on Android 11 or older, when you choose a BLE adapter**, the system may require location permission to search for it. It is used only to find the adapter; your location is never recorded or sent. It is not requested on Android 12 or later, or for Bluetooth (classic) and Wi-Fi adapters.
 
 ## Requirements
