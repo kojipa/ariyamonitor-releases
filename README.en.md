@@ -42,7 +42,7 @@ Some items (current, SOH, high-precision current, charge power), the battery scr
 ## Safety
 
 - **The app sends only read commands to the car.** It has no function to write, reset ECUs or clear trouble codes. It reads from the battery-related ECUs, the meter (tire pressure, odometer), the climate control (outside temp), and, only when turn signals are turned on, the body electrics (turn signal state). Tire pressure and similar values are read only once a minute while driving.
-- If the car is parked, not charging, and almost no current flows for 10 minutes, reading stops automatically (to protect the 12V battery).
+- If the car is parked, not charging, and almost no current flows for 10 minutes, reading stops automatically (to protect the 12V battery). You can choose the time under Settings → Connection: 10 / 30 / 60 minutes or never (v0.4.6+). With "never", the 12V battery may run down.
 - Vehicle data is never sent anywhere. There is no account or sign-up. Record CSVs are only saved to the folder you choose on the device.
 - The only network access is a check, about every 6 hours, for a newer version on this page (you can also check now). You can turn it off in Settings.
 - Only when "Playing song" is on, the app uses Android's notification access. It reads only the playing song's information, not the contents of other notifications, and never sends it anywhere.
@@ -79,6 +79,8 @@ Some items (current, SOH, high-precision current, charge power), the battery scr
 If the Home effects don't appear or stay at CRUISE, turn off "Remove animations" on the device, or set "Animator duration scale" in Developer options to 1x (the log display also doesn't appear while animations are off).
 
 If it won't connect, try these in order: unplug and replug the adapter, turn the car off and on again, close other OBD apps (such as Car Scanner). An adapter can be used by only one app at a time. If a Wi-Fi adapter isn't found, check that it appears in the device's Wi-Fi list (some adapters use channels such as 13 that the device may not see easily).
+
+If tire pressure, odometer, outside temperature or turn signals say the adapter may not support them, your adapter may not support these reads (this happens with some cheap clones). Other adapters have been able to read them.
 
 If it still won't connect, or values look wrong, turn on **Record debug log** in Settings → Other, connect, and then send it from **Report a problem / request** (copy the debug log with **[Copy]** on the Debug log screen and paste it. It is encrypted and only the author can read it). Requests for the app go through the same form. **The form and replies are in Japanese only.**
 
