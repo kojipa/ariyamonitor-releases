@@ -7,6 +7,33 @@
 
 > ⚠️ **試験公開中です。** 作者の車（1台）でしか動作を確かめていません。年式やグレードによっては、値が出なかったり正しくなかったりすることがあります。
 
+## 画面イメージ
+
+<p align="center">
+  <img src="images/home_driving.jpg" width="49%" alt="ホーム（走行中）">
+  <img src="images/home_charging.jpg" width="49%" alt="ホーム（急速充電中）">
+</p>
+<p align="center"><sub>ホーム：走行中（左）と急速充電中（右）。電気の流れを光で表し、キリ番の達成もお祝いします。</sub></p>
+
+<p align="center">
+  <img src="images/battery_diagnosis.jpg" width="49%" alt="バッテリー（診断）">
+  <img src="images/battery_cells.jpg" width="49%" alt="バッテリー（セル96本）">
+</p>
+<p align="center"><sub>バッテリー：ばらつきの診断・補機バッテリー・100%換算容量（左）と、セル96本の電圧マップ（右）。</sub></p>
+
+<p align="center">
+  <img src="images/battery_temperature.jpg" width="49%" alt="バッテリー（モジュール温度）">
+  <img src="images/charge_history.jpg" width="49%" alt="充電履歴の充電カーブ">
+</p>
+<p align="center"><sub>モジュールごとの温度（左）と、充電履歴の充電カーブ（右）。</sub></p>
+
+<p align="center">
+  <img src="images/list.jpg" width="49%" alt="車両のいま（一覧）">
+</p>
+<p align="center"><sub>読み取った値の一覧。</sub></p>
+
+> 画面はアプリの見本表示です。数値は実際の車のものではありません。
+
 ## ダウンロード
 
 👉 **[最新版のページ（Releases）](../../releases/latest)** を開き、`ariyamonitor-public-x.y.z.apk` をダウンロードしてください。

@@ -9,6 +9,33 @@ An Android app that reads battery status and other data from the Nissan Ariya's 
 
 > ⚠️ **This is a trial release.** It has been tested only on the author's own car (a Japanese-market Ariya). Depending on model year, grade or market, some values may not appear or may be wrong. Ariyas sold outside Japan have not been tested at all.
 
+## Screenshots
+
+<p align="center">
+  <img src="images/home_driving.jpg" width="49%" alt="Home (driving)">
+  <img src="images/home_charging.jpg" width="49%" alt="Home (fast charging)">
+</p>
+<p align="center"><sub>Home: driving (left) and fast charging (right). Light effects show the flow of energy, and odometer milestones are celebrated.</sub></p>
+
+<p align="center">
+  <img src="images/battery_diagnosis.jpg" width="49%" alt="Battery (diagnosis)">
+  <img src="images/battery_cells.jpg" width="49%" alt="Battery (96 cells)">
+</p>
+<p align="center"><sub>Battery: cell balance diagnosis, 12V battery and estimated capacity at 100% (left), and the voltage map of all 96 cells (right).</sub></p>
+
+<p align="center">
+  <img src="images/battery_temperature.jpg" width="49%" alt="Battery (module temperatures)">
+  <img src="images/charge_history.jpg" width="49%" alt="Charge curve in the charge history">
+</p>
+<p align="center"><sub>Temperature of each module (left) and a charge curve from the charge history (right).</sub></p>
+
+<p align="center">
+  <img src="images/list.jpg" width="49%" alt="Live values list">
+</p>
+<p align="center"><sub>List of the values read from the car.</sub></p>
+
+> Screenshots show sample data, not readings from a real car. The app can also be shown in English.
+
 ## Download
 
 👉 Open the **[latest release page (Releases)](../../releases/latest)** and download `ariyamonitor-public-x.y.z.apk`.
