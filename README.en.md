@@ -34,6 +34,12 @@ An Android app that reads battery status and other data from the Nissan Ariya's 
 </p>
 <p align="center"><sub>List of the values read from the car.</sub></p>
 
+<p align="center">
+  <img src="images/zesp_charging.jpg" width="62%" alt="ZESP3 minutes left while fast charging">
+  <img src="images/zesp_minutes.jpg" width="36%" alt="ZESP3 minutes left">
+</p>
+<p align="center"><sub>ZESP3 minutes left (v0.5.0 and later, Japan only): while fast charging, the top left shows how many minutes this charge will use (left). Free fast and normal charging minutes left, and the expected bill (right).</sub></p>
+
 > Screenshots show sample data, not readings from a real car. The app can also be shown in English.
 
 ## Download
@@ -65,6 +71,7 @@ If the app is showing Japanese: tap **設定** (Settings), then the **表示** (
 - **Eco challenge (v0.4.8 and later)**: Shows the energy won back by regeneration as a number over the car picture. When a new trip starts, the previous trip (3 km or more) is rated S to C by its efficiency (shown once, the next time Home is open; v0.4.9 and later). Turn it on or off with **Eco challenge** in Settings → Display (on by default).
 - **Milestone counter (v0.4.8 and later)**: Gives notice as the odometer nears a milestone (every 10,000 km, repeated digits and so on) and celebrates when you reach it. You can also set one number of your own, and reached milestones are kept in a list. Turn it on or off with **Milestone counter** in Settings → Display (on by default). The sound for a new personal best or a reached milestone is **Best & milestone sound** (off by default).
 - **Text size (v0.4.8 and later)**: Choose Small, Standard, Large or Extra large with **Text size** in Settings → Display.
+- **ZESP3 minutes left (v0.5.0 and later, Japan only)**: ZESP3 is Nissan's charging plan in Japan. Turn on **Show ZESP3 remaining balance** in Settings → Connection and save your Nissan ID and password, and the app shows the free fast and normal charging minutes left this month (off by default). The top left of Home and the fast-charging card also show how many minutes this charge will use (switch between ZESP3 and Other card). After a fast charge the minutes are read again automatically, and charges the site has not reflected yet are subtracted as an estimate. Once the free minutes are used up, the minutes over are shown, and on the 1st to 9th of each month the expected carry-over from last month too. The expected bill can also be shown. Regular re-reads (every 1, 3 or 6 hours, or never) happen only while the app is shown and the car is stopped. You can also open the site itself. **ZESP READER** is built in with the author's permission. This is unofficial and may stop working if the site changes.
 - **Keep screen on**: Stops the screen from turning off while the app is shown (Off / While reading / Always; the default is While reading).
 
 Some items (current, SOH, high-precision current, charge power), the battery screen's diagnosis and capacity estimate, and the trip summary in the log are **approximate (unofficial)**. Their accuracy hasn't been fully verified even on the author's car, so treat them as a rough guide.
@@ -74,7 +81,9 @@ Some items (current, SOH, high-precision current, charge power), the battery scr
 - **The app sends only read commands to the car.** It has no function to write, reset ECUs or clear trouble codes. It reads from the battery-related ECUs, the meter (tire pressure, odometer), the climate control (outside temp), and, only when turn signals are turned on, the body electrics (turn signal state). Tire pressure and similar values are read only once a minute while driving.
 - If the car is parked, not charging, and almost no current flows for 10 minutes, reading stops automatically (to protect the 12V battery). You can choose the time under Settings → Connection: 10 / 30 / 60 minutes or never (v0.4.6+). With "never", the 12V battery may run down.
 - Vehicle data is never sent anywhere. There is no account or sign-up. Record CSVs are only saved to the folder you choose on the device.
-- The only network access is a check, about every 6 hours, for a newer version on this page (you can also check now). You can turn it off in Settings.
+- The app uses the network for two things only:
+  - About every 6 hours, a check for a newer version on this page (you can also check now). You can turn it off in Settings.
+  - **Only when ZESP3 minutes left is on**, the ZESP3 and Nissan ID sites, to read the minutes left (v0.5.0 and later). Your Nissan ID and password are stored encrypted on the device and used only to sign in to the ZESP3 and Nissan ID sites. Turning the feature off deletes them. No vehicle data is sent.
 - Only when "Playing song" is on, the app uses Android's notification access. It reads only the playing song's information, not the contents of other notifications, and never sends it anywhere. The play/pause button only passes that action to the music app on the device.
 - Location is not used, with one exception: **on Android 11 or older, when you choose a BLE adapter**, the system may require location permission to search for it. It is used only to find the adapter; your location is never recorded or sent. It is not requested on Android 12 or later, or for Bluetooth (classic) and Wi-Fi adapters.
 
@@ -85,6 +94,7 @@ Some items (current, SOH, high-precision current, charge power), the battery scr
 | Car | Nissan Ariya |
 | Android | 8.0 or later (a phone, or an Android device such as a CarPlay AI box) |
 | OBD2 adapter | An **ELM327-compatible** adapter connecting over **Bluetooth (classic / SPP)**, **Bluetooth Low Energy (BLE)** or **Wi-Fi** |
+| To use ZESP3 minutes left | A ZESP3 membership with a Nissan ID, and an internet connection on the device |
 
 - Pair a Bluetooth (classic) adapter first in Android's Settings → Bluetooth (the PIN is usually `1234` or `0000`). BLE adapters need no pairing; you choose them inside the app.
 - Wi-Fi adapters without a password (the kind that creates its own Wi-Fi network) are supported. While connected, the device's Wi-Fi is used only for the adapter (on Android 10 or later, other traffic keeps using mobile data. Head units that get internet through Wi-Fi tethering lose internet while connected).
