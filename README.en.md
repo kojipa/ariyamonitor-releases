@@ -80,10 +80,11 @@ Some items (current, SOH, high-precision current, charge power), the battery scr
 
 - **The app sends only read commands to the car.** It has no function to write, reset ECUs or clear trouble codes. It reads from the battery-related ECUs, the meter (tire pressure, odometer), the climate control (outside temp), and, only when turn signals are turned on, the body electrics (turn signal state). Tire pressure and similar values are read only once a minute while driving.
 - If the car is parked, not charging, and almost no current flows for 10 minutes, reading stops automatically (to protect the 12V battery). You can choose the time under Settings → Connection: 10 / 30 / 60 minutes or never (v0.4.6+). With "never", the 12V battery may run down.
-- Vehicle data is never sent anywhere. There is no account or sign-up. Record CSVs are only saved to the folder you choose on the device.
-- The app uses the network for two things only:
+- Vehicle data is never sent automatically. There is no account or sign-up. Record CSVs are only saved to the folder you choose on the device.
+- The app uses the network for three things only:
   - About every 6 hours, a check for a newer version on this page (you can also check now). You can turn it off in Settings.
   - **Only when ZESP3 minutes left is on**, the ZESP3 and Nissan ID sites, to read the minutes left (v0.5.0 and later). Your Nissan ID and password are stored encrypted on the device and used only to sign in to the ZESP3 and Nissan ID sites. Turning the feature off deletes them. No vehicle data is sent.
+  - **"Build Ariya Monitor together" (v0.5.4 and later, Japanese display only)**: a survey log is sent to the author's endpoint (Cloudflare) only when you tap [Send to the author]. Only the encrypted survey log, the car and adapter you registered, and your comment are sent — no location or VIN. Opening the survey list reads the number of logs collected per survey (nothing is sent).
 - Only when "Playing song" is on, the app uses Android's notification access. It reads only the playing song's information, not the contents of other notifications, and never sends it anywhere. The play/pause button only passes that action to the music app on the device.
 - Location is not used, with one exception: **on Android 11 or older, when you choose a BLE adapter**, the system may require location permission to search for it. It is used only to find the adapter; your location is never recorded or sent. It is not requested on Android 12 or later, or for Bluetooth (classic) and Wi-Fi adapters.
 
